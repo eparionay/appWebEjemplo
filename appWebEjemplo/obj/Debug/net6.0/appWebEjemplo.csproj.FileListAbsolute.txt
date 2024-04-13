@@ -229,3 +229,4 @@ C:\Users\epariona\Desktop\Proyectos\appWebEjemplo\appWebEjemplo\obj\Debug\net6.0
 C:\Users\epariona\Desktop\Proyectos\appWebEjemplo\appWebEjemplo\obj\Debug\net6.0\appWebEjemplo.pdb
 C:\Users\epariona\Desktop\Proyectos\appWebEjemplo\appWebEjemplo\obj\Debug\net6.0\appWebEjemplo.genruntimeconfig.cache
 C:\Users\epariona\Desktop\Proyectos\appWebEjemplo\appWebEjemplo\obj\Debug\net6.0\ref\appWebEjemplo.dll
+C:\Users\epariona\Desktop\Proyectos\appWebEjemplo\appWebEjemplo\obj\Debug\net6.0\appWebEjemplo.sourcelink.json

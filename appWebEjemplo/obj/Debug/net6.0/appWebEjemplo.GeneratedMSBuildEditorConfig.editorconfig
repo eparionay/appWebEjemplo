@@ -22,8 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXGJ1c3F1ZWRhQXBlbGxpZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/epariona/Desktop/Proyectos/appWebEjemplo/appWebEjemplo/Views/Alumno/busquedaPorFecha.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXGJ1c3F1ZWRhUG9yRmVjaGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/epariona/Desktop/Proyectos/appWebEjemplo/appWebEjemplo/Views/Alumno/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/epariona/Desktop/Proyectos/appWebEjemplo/appWebEjemplo/Views/Alumno/listadoPaginacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXGxpc3RhZG9QYWdpbmFjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/epariona/Desktop/Proyectos/appWebEjemplo/appWebEjemplo/Views/Home/Index.cshtml]

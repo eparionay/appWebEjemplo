@@ -1,17 +1,20 @@
 ﻿@model IEnumerable<appWebEjemplo.Models.Alumno>
 
 @{
-    ViewData["Title"] = "busquedaApellido";
+    ViewData["Title"] = "busquedaPorFecha";
 }
 
-<h1>Busqueda de Alumnos por Apellido</h1>
+<h1>busquedaPorFecha</h1>
 
 
 <form>
-    <label>Ingrese Apellido a buscar : </label>
-    @Html.TextBox("apellido")
+
+    <label>Ingrese el año : </label>
+    @Html.TextBox("fecha")
     <button>Consultar</button>
 </form>
+
+
 
 <table class="table">
     <thead>
@@ -28,7 +31,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.documento)
             </th>
-
+          
         </tr>
     </thead>
     <tbody>
@@ -46,7 +49,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.documento)
             </td>
-            
+       
         </tr>
 }
     </tbody>
