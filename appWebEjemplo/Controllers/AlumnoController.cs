@@ -1,6 +1,7 @@
 ﻿using appWebEjemplo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Win32;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
@@ -179,6 +180,37 @@ namespace appWebEjemplo.Controllers
             return lista;
         }
 
+        public int registrarAlumno(Alumno alumno)
+        {
+            int procesar = 0;
+            SqlConnection con = new SqlConnection(cadenaConexion);
+            SqlCommand cmd;
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("usp_alumno_crud", con);
+                cmd.CommandTimeout = 0;
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@indicador","registrar");
+                cmd.Parameters.AddWithValue("@codigo", 0);
+                cmd.Parameters.AddWithValue("@nombres", alumno.nombres);
+                cmd.Parameters.AddWithValue("@apellidos", alumno.apellidos);
+                cmd.Parameters.AddWithValue("@documento", alumno.documento);
+                cmd.Parameters.AddWithValue("@carrera", alumno.codigoCarrera);
+                procesar= Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error : " +ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
+            return procesar;
+        }
+
         // Esta vista nos muestra el listado total de alumnos
         public IActionResult Index()
         {
@@ -188,15 +220,11 @@ namespace appWebEjemplo.Controllers
         // Esta vista debe mostrar un cuadro de texto donde se ingrese el apellido, y nos devuelva
         // la coincidencia con esa palabra
 
-
-
-
         public IActionResult Create()
         {
             ViewBag.carreras = new SelectList(listadoCarrera(), "codigoCarrera", "nombreCarrera");
             return View(new Alumno());
         }
-
 
         [HttpPost]
         public IActionResult Create(Alumno registro)
@@ -206,32 +234,18 @@ namespace appWebEjemplo.Controllers
             Debug.WriteLine("Apellidos : " + registro.apellidos);
             Debug.WriteLine("Carrera : " + registro.codigoCarrera);
 
-            // a tu procedimiento usp_alumno_crud - indicador registrar 
-            ViewBag.mensajeValidacion = "Registro Ingresado Correctamente";
-
+            int procesar = registrarAlumno(registro);
+            if (procesar == 1)
+            {
+                ViewBag.mensajeValidacion = "Registro Ingresado Correctamente.";
+            }
+            else
+            {
+                ViewBag.mensajeValidacion = "Hubo un error al ingresar.";
+            }
+            ViewBag.carreras = new SelectList(listadoCarrera(), "codigoCarrera", "nombreCarrera");
             return View(registro);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         public IActionResult busquedaApellido(string apellido="si")
